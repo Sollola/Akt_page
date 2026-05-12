@@ -52,12 +52,12 @@
     align-items: center;
     background-color: #e0e0e0;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover; /* Изображение растягивается на весь баннер */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Убираем повторение изображения */
 }
 
-/* Псевдоэлемент для отображения слова на фоне */
+/* Псевдоэлемент для отображения слова на фоне (работает, если нет изображения) */
 .banner.has-text::before {
     content: attr(data-background-word);
     position: absolute;
@@ -76,60 +76,48 @@
     z-index: 1;
 }
 
-/* Контейнер для контента баннера */
-.ad-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px; /* Расстояние между текстом и кнопкой */
-    z-index: 2;
-}
-
 /* Стили рекламного текста */
 .ad-text {
     font-size: 32px;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
     text-align: center;
 }
-
 .adaptive-button {
     /* Базовые параметры кнопки */
-    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Градиент для переливания */
     border: none;
-    border-radius: 8px;
-    padding: 16px 32px;
+    border-radius: 8px; /* Закругленные углы */
+    padding: 16px 32px; /* Внутренние отступы */
     color: white;
     font-size: 16px;
     cursor: pointer;
     display: inline-block;
     text-align: center;
     text-decoration: none;
-
+    
     /* Адаптивность */
     box-sizing: border-box;
-    width: fit-content;
-    min-width: 120px;
-
+    width: fit-content; /* Автоподстройка под текст */
+    min-width: 120px; /* Минимальная ширина */
+    
     /* Плавные переходы */
     transition: 0.3s ease;
 }
 
 /* Эффект при наведении */
 .adaptive-button:hover {
-    transform: scale(1.02);
+    transform: scale(1.02); /* Легкое увеличение */
     filter: brightness(1.1);
 }
 
 /* Медиа-запросы для разных устройств */
 @media screen and (max-width: 768px) {
     .adaptive-button {
-        padding: 14px 24px;
+        padding: 14px 24px; /* Уменьшаем отступы на мобильных */
         font-size: 14px;
-    }
-    .ad-text {
-        font-size: 24px;
     }
 }
 
@@ -137,11 +125,5 @@
     .adaptive-button {
         padding: 12px 20px;
         font-size: 12px;
-    }
-    .ad-text {
-        font-size: 18px;
-    }
-    .ad-content {
-        gap: 20px;
     }
 }
