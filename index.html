@@ -20,18 +20,18 @@
         <button onclick="updateBackground()">Применить</button>
     </div>
 
-    <!-- Баннер: фон (изображение/слово) + рекламный текст -->
+    <!-- Баннер: фон (изображение/слово) + рекламный текст + кнопка -->
     <div class="banner" id="banner">
-        <div class="ad-text">
-            <p>Специальное предложение!</p>
-            <p>Скидка 50%!</p>
-            <br><br>
-            <button class="cta-button">Купить</button>
-
+        <!-- Псевдоэлемент для слова на фоне (если нет изображения) -->
+        <div class="ad-content">
+            <div class="ad-text">
+                <p>Специальное предложение!</p>
+                <p>Скидка 50%!</p>
+            </div>
+            <button class="adaptive-button">Нажми меня</button>
         </div>
     </div>
 
     <script src="script.js"></script>
-    <button class="adaptive-button">Нажми меня</button>
 </body>
 </html>
