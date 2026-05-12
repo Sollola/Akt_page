@@ -85,6 +85,24 @@
     z-index: 2;
     text-align: center;
 }
+
+.banner {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем по горизонтали */
+    gap: 20px; /* Расстояние между заголовком и кнопкой */
+}
+
+.banner h2 {
+    margin: 0;
+    text-align: center;
+}
 .adaptive-button {
     /* Базовые параметры кнопки */
     background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Градиент для переливания */
@@ -109,7 +127,7 @@
 
 /* Эффект при наведении */
 .adaptive-button:hover {
-    transform: scale(1.02); /* Легкое увеличение */
+    transform: scale(1.05); /* Легкое увеличение */
     filter: brightness(1.1);
 }
 
@@ -127,3 +145,9 @@
         font-size: 12px;
     }
 }
+
+/* Стили для кнопки остаются без изменений */
+.adaptive-button {
+    /* предыдущие стили кнопки */
+}
+
